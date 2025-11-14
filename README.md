@@ -22,10 +22,34 @@ Drop-in replacements for the Anthropic and OpenAI Python clients that handle rou
 
 ## Installation
 
+### Install from GitHub (Recommended)
+
+Install directly from the repository using pip:
+
+```bash
+pip install git+https://github.com/arvkevi/claude_n_codex_api_proxy.git
+```
+
+### Install from Local Clone
+
+If you've cloned the repository:
+
+```bash
+# For regular installation
+pip install .
+
+# For development/editable installation
+pip install -e .
+```
+
+### Legacy Installation (requirements.txt)
+
 ```bash
 pip install -r requirements.txt
 # On Windows you can also use: py -m pip install -r requirements.txt
 ```
+
+### Prerequisites
 
 Make sure you have the relevant CLI installed and available in your PATH:
 ```bash
@@ -38,6 +62,14 @@ codex --version    # for Codex
 ### Option 1: Universal HTTP Proxy (Recommended)
 
 1. **Setup and start the proxy:**
+
+After pip installation, you can use the convenient console scripts:
+```bash
+claude-n-codex-setup   # One-time setup (installs certificates)
+claude-n-codex-proxy   # Start the proxy server
+```
+
+Or use the Python scripts directly:
 ```bash
 python setup_proxy.py  # One-time setup
 # macOS / Linux
