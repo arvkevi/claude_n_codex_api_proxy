@@ -1,0 +1,4 @@
+include README.md
+include requirements.txt
+include start_proxy.sh
+recursive-include docs *.md

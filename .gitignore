@@ -87,6 +87,7 @@ celerybeat-schedule
 develop-eggs/
 dmypy.json
 eggs/
+*.egg-info/
 ipython_config.py
 local_settings.py
 pip-delete-this-directory.txt

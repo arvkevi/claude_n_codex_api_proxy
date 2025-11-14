@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-n-codex-api-proxy"
+version = "0.1.0"
+description = "A universal HTTP proxy and Python library that automatically routes Anthropic or OpenAI API calls to local CLI tools (Claude Code or Codex)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "arvkevi"}
+]
+keywords = ["anthropic", "openai", "claude", "codex", "proxy", "api", "router"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: Proxy Servers",
+]
+
+dependencies = [
+    "anthropic>=0.18.0",
+    "openai>=1.0.0",
+    "mitmproxy>=10.0.0",
+    "cryptography>=41.0.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/arvkevi/claude_n_codex_api_proxy"
+Repository = "https://github.com/arvkevi/claude_n_codex_api_proxy"
+Issues = "https://github.com/arvkevi/claude_n_codex_api_proxy/issues"
+
+[project.scripts]
+claude-n-codex-proxy = "proxy_server:main"
+claude-n-codex-setup = "setup_proxy:main"
+
+[tool.setuptools]
+py-modules = [
+    "anthropic_router",
+    "openai_router",
+    "claude_code_client",
+    "codex_client",
+    "claude_code_proxy_handler",
+    "codex_proxy_handler",
+    "proxy_server",
+    "setup_proxy",
+    "start_proxy",
+    "utils",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = ["tests*", "test_*"]
